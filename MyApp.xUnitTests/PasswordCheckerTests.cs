@@ -49,5 +49,13 @@ namespace MyApp.xUnitTests
             var result = checker.IsStrong("NOLOWERCASE123");
             Assert.False(result);
         }
+
+        [Fact]
+        public void IsStrong_NullOrEmpty_ReturnsFalse()
+        { 
+            var  checker = new PasswordStrengthChecker();
+            Assert.False(checker.IsStrong(""));
+            Assert.False(checker.IsStrong(null));
+        }
     }
 }
